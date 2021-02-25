@@ -12,10 +12,15 @@ class ViewController: UIViewController {
 }
 
 struct Team {
-    var name : Elements
-    var stat : [Element]
-    var winPoints : Elements
+    var name : [String]
+    var game : [String]
+    var win : [String]
+    var draw : [String]
+    var lose : [String]
+    var winPoints : [String]
 }
+
+var PL : Team = Team(name: [], game: [], win: [], draw: [], lose: [], winPoints: [])
 
 func crawl(){
     let url = URL(string: "https://www.premierleague.com/tables")
@@ -33,8 +38,19 @@ func crawl(){
         
         let FirstWinStat: Elements = try doc.select(".tableDark").select("td.points")
                 
-        print(try TeamName[0].text(), try FirstStat[3].text(), try FirstStat[4].text(), try FirstStat[5].text(), try FirstStat[6].text(), try FirstWinStat[0].text())
-       
+//        print(try TeamName[0].text(), try FirstStat[3].text(), try FirstStat[4].text(), try FirstStat[5].text(), try FirstStat[6].text(), try FirstWinStat[0].text())
+        
+        PL.name.append(try TeamName[0].text())
+        PL.game.append(try FirstStat[3].text())
+        PL.win.append(try FirstStat[4].text())
+        PL.draw.append(try FirstStat[5].text())
+        PL.lose.append(try FirstStat[6].text())
+        PL.winPoints.append(try FirstWinStat[0].text())
+      
+        print(PL.name,PL.game,PL.win,PL.draw,PL.lose,PL.winPoints)
+        
+        
+        
     } catch Exception.Error(let type, let message) {
         print("Message: \(message)")
         print("type: \(type)")
