@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		61E3ECE791E7E67A39107B3E /* Pods_textcrawl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A526B1E944642FD04C2C1334 /* Pods_textcrawl.framework */; };
+		651AC02625ECA11F00E8C14C /* TeamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651AC02525ECA11F00E8C14C /* TeamInfo.swift */; };
 		65E6809725E600AF00B8160C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6809625E600AF00B8160C /* AppDelegate.swift */; };
 		65E6809925E600AF00B8160C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6809825E600AF00B8160C /* SceneDelegate.swift */; };
 		65E6809B25E600AF00B8160C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6809A25E600AF00B8160C /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		16B76C0AF72E67BC353ADB32 /* Pods-textcrawl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textcrawl.release.xcconfig"; path = "Target Support Files/Pods-textcrawl/Pods-textcrawl.release.xcconfig"; sourceTree = "<group>"; };
+		651AC02525ECA11F00E8C14C /* TeamInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfo.swift; sourceTree = "<group>"; };
 		65E6809325E600AF00B8160C /* textcrawl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = textcrawl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E6809625E600AF00B8160C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E6809825E600AF00B8160C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		651AC02425ECA0D000E8C14C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				651AC02525ECA11F00E8C14C /* TeamInfo.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		65E6808A25E600AF00B8160C = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 		65E6809525E600AF00B8160C /* textcrawl */ = {
 			isa = PBXGroup;
 			children = (
+				651AC02425ECA0D000E8C14C /* model */,
 				65E6809625E600AF00B8160C /* AppDelegate.swift */,
 				65E6809825E600AF00B8160C /* SceneDelegate.swift */,
 				65E6809A25E600AF00B8160C /* ViewController.swift */,
@@ -88,7 +99,6 @@
 				EC4913380F7DE77530DEC008 /* Pods-textcrawl.debug.xcconfig */,
 				16B76C0AF72E67BC353ADB32 /* Pods-textcrawl.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651AC02625ECA11F00E8C14C /* TeamInfo.swift in Sources */,
 				65E6809B25E600AF00B8160C /* ViewController.swift in Sources */,
 				65E6809725E600AF00B8160C /* AppDelegate.swift in Sources */,
 				65E6809925E600AF00B8160C /* SceneDelegate.swift in Sources */,
