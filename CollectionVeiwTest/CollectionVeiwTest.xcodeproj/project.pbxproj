@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		651944C825FF2D1500081069 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651944C725FF2D1500081069 /* AppDelegate.swift */; };
 		651944CA25FF2D1500081069 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651944C925FF2D1500081069 /* SceneDelegate.swift */; };
-		651944CC25FF2D1500081069 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651944CB25FF2D1500081069 /* ViewController.swift */; };
 		651944CF25FF2D1500081069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651944CD25FF2D1500081069 /* Main.storyboard */; };
 		651944D125FF2D1600081069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651944D025FF2D1600081069 /* Assets.xcassets */; };
 		651944D425FF2D1600081069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651944D225FF2D1600081069 /* LaunchScreen.storyboard */; };
 		651944E925FF43EF00081069 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651944E825FF43EF00081069 /* CollectionViewCell.swift */; };
+		65EE17162604432C0064B779 /* PLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE17152604432C0064B779 /* PLViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		651944C425FF2D1500081069 /* CollectionVeiwTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionVeiwTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		651944C725FF2D1500081069 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		651944C925FF2D1500081069 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		651944CB25FF2D1500081069 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		651944CE25FF2D1500081069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		651944D025FF2D1600081069 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		651944D325FF2D1600081069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		651944D525FF2D1600081069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651944E825FF43EF00081069 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		65EE17152604432C0064B779 /* PLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			children = (
 				651944C725FF2D1500081069 /* AppDelegate.swift */,
 				651944C925FF2D1500081069 /* SceneDelegate.swift */,
-				651944CB25FF2D1500081069 /* ViewController.swift */,
+				65EE17152604432C0064B779 /* PLViewController.swift */,
 				651944CD25FF2D1500081069 /* Main.storyboard */,
 				651944D025FF2D1600081069 /* Assets.xcassets */,
 				651944D225FF2D1600081069 /* LaunchScreen.storyboard */,
@@ -140,9 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				651944CC25FF2D1500081069 /* ViewController.swift in Sources */,
 				651944C825FF2D1500081069 /* AppDelegate.swift in Sources */,
 				651944E925FF43EF00081069 /* CollectionViewCell.swift in Sources */,
+				65EE17162604432C0064B779 /* PLViewController.swift in Sources */,
 				651944CA25FF2D1500081069 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
