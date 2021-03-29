@@ -1,26 +1,3 @@
-//
-//  BooleanAttribute.swift
-//  SwifSoup
-//
-//  Created by Nabil Chatbi on 29/09/16.
-//  Copyright © 2016 Nabil Chatbi.. All rights reserved.
-//
-
-import Foundation
-
-/**
- * A boolean attribute that is written out without any value.
- */
-open class BooleanAttribute: Attribute {
-    /**
-     * Create a new boolean attribute from unencoded (raw) key.
-     * @param key attribute key
-     */
-    init(key: String) throws {
-        try super.init(key: key, value: "")
-    }
-
-    override public func isBooleanAttribute() -> Bool {
-        return true
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:472f6f0b4c204163d46b6c44e252c5d0a628c0aa934a81b80c9f318e9fce49fd
+size 557

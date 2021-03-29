@@ -1,24 +1,3 @@
-//
-//  DataUtil.swift
-//  SwifSoup
-//
-//  Created by Nabil Chatbi on 02/10/16.
-//  Copyright © 2016 Nabil Chatbi.. All rights reserved.
-//
-
-import Foundation
-
-/**
- * Internal static utilities for handling data.
- *
- */
-class  DataUtil {
-
-    static let charsetPattern = "(?i)\\bcharset=\\s*(?:\"|')?([^\\s,;\"']*)"
-    static let defaultCharset = "UTF-8" // used if not found in header or meta charset
-    static let bufferSize = 0x20000 // ~130K.
-    static let UNICODE_BOM = 0xFEFF
-    static let mimeBoundaryChars = "-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    static let boundaryLength = 32
-
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c8bdb3d34fba626f8c7befeb8cfff248b1f6a8e5453aa378045532a96e6a4a85
+size 624
