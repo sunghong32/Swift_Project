@@ -22,42 +22,63 @@ class TodoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: 키보드 디텍션
+        // TODO: 키보드 디텍션 (완료)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         // TODO: 데이터 불러오기 (완료)
         todoListViewModel.loadTasks()
-        let todo = TodoManger.shared.createTodo(detail: "😰 Corona 난리", isToday: true)
-        Storage.saveTodo(todo, fileName: "test.json")
+//        let todo = TodoManger.shared.createTodo(detail: "😰 Corona 난리", isToday: true)
+//        Storage.saveTodo(todo, fileName: "test.json")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let todo = Storage.restoreTodd("test.json")
-        print("---> restore from dist: \(todo)")
+//        let todo = Storage.restoreTodd("test.json")
+//        print("---> restore from dist: \(todo)")
     }
     
     @IBAction func isTodayButtonTapped(_ sender: Any) {
-        // TODO: 투데이 버튼 토글 작업
+        // TODO: 투데이 버튼 토글 작업 (완료)
+        isTodayButton.isSelected = !isTodayButton.isSelected
         
     }
     
     @IBAction func addTaskButtonTapped(_ sender: Any) {
-        // TODO: Todo 태스크 추가
+        // TODO: Todo 태스크 추가 (완료)
         // add task to view model
         // and tableview reload or update
+        guard let detail = inputTextFeild.text, detail.isEmpty == false else { return }
+        let todo = TodoManger.shared.createTodo(detail: detail, isToday: isTodayButton.isSelected)
+        todoListViewModel.addTodo(todo)
+        collectionView.reloadData()
+        inputTextFeild.text = ""
+        isTodayButton.isSelected = false
         
     }
     
-    // TODO: BG 탭했을때, 키보드 내려오게 하기
-
+    // TODO: BG 탭했을때, 키보드 내려오게 하기 (완료)
+    @IBAction func tapBG(_ sender: Any) {
+        inputTextFeild.resignFirstResponder()
+    }
+    
 }
 
 extension TodoListViewController {
     @objc private func adjustInputView(noti: Notification) {
         guard let userInfo = noti.userInfo else { return }
-        // TODO: 키보드 높이에 따른 inputview 위치 변경
+        // TODO: 키보드 높이에 따른 inputview 위치 변경 (완료)
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
+        if noti.name == UIResponder.keyboardWillShowNotification {
+            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            inputViewBottom.constant = adjustmentHeight
+        } else {
+            inputViewBottom.constant = 0
+        }
+        
+        print("---> Keyboard End Frame: \(keyboardFrame)")
     }
 }
 
@@ -80,7 +101,6 @@ extension TodoListViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoListCell", for: indexPath) as? TodoListCell else {
             return UICollectionViewCell()
         }
-        return cell
         
         var todo: Todo
         if indexPath.section == 0 {
@@ -88,11 +108,23 @@ extension TodoListViewController: UICollectionViewDataSource {
         } else {
             todo = todoListViewModel.upcomingTodos[indexPath.item]
         }
+        cell.updateUI(todo: todo)
         
         // TODO: 커스텀 셀 (완료)
         // TODO: todo를 이용해서 updateUI (완료)
-        // TODO: doneButtonHandler 작성
-        // TODO: deleteButtonHandler 작성
+        // TODO: doneButtonHandler 작성 (완료)
+        // TODO: deleteButtonHandler 작성 (완료)
+        
+        cell.doneButtonTapHandler = { isDone in
+            todo.isDone = isDone
+            self.todoListViewModel.updateTodo(todo)
+            self.collectionView.reloadData()
+        }
+        
+        cell.deleteButtonTapHandler = {
+            self.todoListViewModel.deleteTodo(todo)
+            self.collectionView.reloadData()
+        }
         return cell
     }
     
